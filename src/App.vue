@@ -12,7 +12,7 @@
             sm="8"
           >
             <div
-              class="text-h4 text-center mb-12"
+              class="text-h4 text-center mb-10"
             >
               Password Generator
             </div>
@@ -20,21 +20,17 @@
               class="my-4"
             >
               <v-card-text
-                class="px-8 py-12"
+                class="font-weight-light px-8 py-12"
               >
-                <div
-                  class="text-h4 font-weight-light white--text text-break"
-                >
-                  <v-text-field
-                    color="red"
-                    hide-details
-                    outlined
-                    readonly
-                    spellcheck="false"
-                    :value="password"
-                    @focus="copy($event)"
-                  />
-                </div>
+                <v-text-field
+                  color="red"
+                  hide-details
+                  outlined
+                  readonly
+                  spellcheck="false"
+                  :value="password"
+                  @focus="copy($event)"
+                />
               </v-card-text>
             </v-card>
             <v-card
@@ -46,6 +42,7 @@
                 <v-row>
                   <v-col
                     cols="10"
+                    sm="11"
                   >
                     <v-slider
                       v-model="length"
@@ -76,6 +73,7 @@
                   </v-col>
                   <v-col
                     cols="2"
+                    sm="1"
                     class="text-center"
                   >
                     <v-btn
