@@ -12,7 +12,7 @@
             sm="8"
           >
             <div
-              class="text-h4 text-center mb-10"
+              class="text-h5 text-sm-h4 text-center mb-10"
             >
               Password Generator
             </div>
@@ -20,7 +20,7 @@
               class="my-4"
             >
               <v-card-text
-                class="font-weight-light px-8 py-12"
+                class="px-8 py-12"
               >
                 <v-text-field
                   color="red"
@@ -30,6 +30,7 @@
                   spellcheck="false"
                   :value="password"
                   @focus="copy($event)"
+                  class="text-h6 font-weight-regular"
                 />
               </v-card-text>
             </v-card>
@@ -44,32 +45,38 @@
                     cols="10"
                     sm="11"
                   >
-                    <v-slider
-                      v-model="length"
-                      color="red"
-                      hide-details
-                      label="Length"
-                      max="100"
-                      min="10"
-                      thumb-label
-                      thumb-size="24"
-                      track-color="grey"
-                      class="mb-6"
-                    />
-                    <v-checkbox
-                      v-model="numbers"
-                      color="red"
-                      dense
-                      hide-details
-                      label="Numbers"
-                    />
-                    <v-checkbox
-                      v-model="symbols"
-                      color="red"
-                      dense
-                      hide-details
-                      label="Symbols"
-                    />
+                    <div>
+                      <v-slider
+                        v-model="length"
+                        color="red"
+                        hide-details
+                        label="Length"
+                        max="100"
+                        min="10"
+                        thumb-label
+                        thumb-size="24"
+                        track-color="grey"
+                        class="mb-6"
+                      />
+                    </div>
+                    <div>
+                      <v-checkbox
+                        v-model="numbers"
+                        color="red"
+                        dense
+                        hide-details
+                        label="Numbers"
+                      />
+                    </div>
+                    <div>
+                      <v-checkbox
+                        v-model="symbols"
+                        color="red"
+                        dense
+                        hide-details
+                        label="Symbols"
+                      />
+                    </div>
                   </v-col>
                   <v-col
                     cols="2"
