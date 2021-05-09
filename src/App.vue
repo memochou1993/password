@@ -25,7 +25,15 @@
                 <div
                   class="text-h4 font-weight-light white--text text-break"
                 >
-                {{ password }}
+                  <v-text-field
+                    color="red"
+                    hide-details
+                    outlined
+                    readonly
+                    spellcheck="false"
+                    :value="password"
+                    @focus="copy($event)"
+                  />
                 </div>
               </v-card-text>
             </v-card>
@@ -115,6 +123,21 @@ export default {
       this.letters = false;
       this.letters = true;
     },
+    copy(event) {
+      event.target.select();
+      document.execCommand('copy');
+    },
   },
 };
 </script>
+
+<style lang="scss" scoped>
+::v-deep .v-text-field__slot,
+::v-deep input {
+  cursor: pointer;
+}
+::v-deep .v-text-field--outlined.v-input--is-focused fieldset,
+::v-deep .v-text-field--outlined.v-input--has-state fieldset {
+  border: 1px solid currentColor;
+}
+</style>
