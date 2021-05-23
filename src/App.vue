@@ -23,12 +23,15 @@
                 class="px-8 py-12"
               >
                 <v-text-field
+                  append-icon="mdi-content-copy"
                   color="red"
                   hide-details
                   outlined
                   readonly
+                  ref="password"
                   spellcheck="false"
                   :value="password"
+                  @click:append="$refs.password.focus()"
                   @focus="copy($event)"
                   class="text-h6 font-weight-regular"
                 />
@@ -53,7 +56,7 @@
                         label="Length"
                         max="100"
                         min="10"
-                        thumb-label
+                        thumb-label="always"
                         thumb-size="24"
                         track-color="grey"
                         class="mb-6"
